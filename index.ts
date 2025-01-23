@@ -1,5 +1,3 @@
-"use strict";
-
 import express from "express";
 import { foodCategoryRouter } from "./router/food-category";
 import { foodRouter } from "./router/food";
@@ -8,7 +6,7 @@ import { configDotenv } from "dotenv";
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-const PORT = 8000;
+const PORT = 7000;
 const app = express();
 
 app.use(cors());
