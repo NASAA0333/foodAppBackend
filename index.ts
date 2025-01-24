@@ -2,6 +2,7 @@ import express from "express";
 import { foodCategoryRouter } from "./router/food-category";
 import { foodRouter } from "./router/food";
 import { configDotenv } from "dotenv";
+import { foodCard } from "./router/foodCard";
 
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -28,6 +29,7 @@ connectMongoDb();
 
 app.use("/food-category/", foodCategoryRouter);
 app.use("/food/", foodRouter);
+app.use("/foodCard/", foodCard);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
