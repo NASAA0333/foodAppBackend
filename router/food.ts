@@ -9,7 +9,7 @@ foodRouter.get("/", async (req: Request, res: Response) => {
 });
 foodRouter.post("/", async (req: Request, res: Response) => {
   const newItem = await FoodModel.create({
-    foodName: req.body.foodName,
+    foodName: req.body.name,
     price: req.body.price,
     ingredients: req.body.ingredients,
     image: req.body.image,
@@ -32,7 +32,7 @@ foodRouter.put("/:id", async (req: Request, res: Response) => {
   const updated = await FoodModel.findByIdAndUpdate(
     updateId,
     {
-      foodName: req.body.foodName,
+      foodName: req.body.name,
       price: req.body.price,
       ingredients: req.body.ingredients,
       image: req.body.image,
