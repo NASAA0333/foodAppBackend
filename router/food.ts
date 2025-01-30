@@ -7,6 +7,7 @@ foodRouter.get("/", async (req: Request, res: Response) => {
   const foodNames = await FoodModel.find();
   res.json(foodNames);
 });
+
 foodRouter.post("/", async (req: Request, res: Response) => {
   const newItem = await FoodModel.create({
     foodName: req.body.name,
@@ -23,7 +24,7 @@ foodRouter.post("/", async (req: Request, res: Response) => {
 
 foodRouter.delete("/:id", async (req: Request, res: Response) => {
   const foodJson = await FoodModel.findByIdAndDelete(req.params.id);
-  res.send("deleted lol");
+  res.send("deleted hiitseeen");
   res.json(foodJson);
 });
 
