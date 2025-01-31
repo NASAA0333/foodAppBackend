@@ -24,8 +24,7 @@ foodRouter.post("/", async (req: Request, res: Response) => {
 
 foodRouter.delete("/:id", async (req: Request, res: Response) => {
   const foodJson = await FoodModel.findByIdAndDelete(req.params.id);
-  res.send("deleted hiitseeen");
-  res.json(foodJson);
+  res.sendStatus(200);
 });
 
 foodRouter.put("/:id", async (req: Request, res: Response) => {
