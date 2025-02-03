@@ -19,10 +19,7 @@ const connectMongoDb = async () => {
   const MONGODB_URI = process.env.MONGODB_URI;
   try {
     await mongoose.connect(MONGODB_URI);
-    // console.log("Succesfully connected");
-  } catch (error) {
-    // console.log("failed", error);
-  }
+  } catch (error) {}
 };
 
 connectMongoDb();
@@ -30,7 +27,3 @@ connectMongoDb();
 app.use("/food-category/", foodCategoryRouter);
 app.use("/food/", foodRouter);
 app.use("/foodCard/", foodCard);
-
-app.listen(PORT, () => {
-  // console.log(`Server is running on http://localhost:${PORT}`);
-});
